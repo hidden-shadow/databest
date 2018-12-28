@@ -48,11 +48,13 @@ body {
 		#main-panel,
 		#main-section {
 			height: calc(100vh - 51px);
+			overflow: auto;
 		}
 
 		#main-panel {
 			background: #fff;
 			border-right: 1px solid #eee;
+			overflow: auto;
 
 			svg:not(:root).svg-inline--fa {
 				overflow: visible;
@@ -65,8 +67,17 @@ body {
 		}
 
 		#main-section {
-			#main-table-wrapper {
+			.main-table-wrapper {
 				height: calc(100% - 56px) !important;
+			}
+
+			.quick-sql {
+				margin-bottom: 10px;
+				padding: 0 10px;
+			}
+
+			.sql-formatter-btn {
+				margin-bottom: 10px;
 			}
 		}
 	}
@@ -97,6 +108,59 @@ body {
 			.top-section-btns {
 				text-align: right;
 				margin-top: 5px;
+			}
+		}
+	}
+}
+
+#connection-dialog {
+	.el-dialog__body {
+		padding-top: 5px;
+	}
+
+	.el-steps {
+		margin-bottom: 50px;
+	}
+
+	.connection-dialog-content {
+		& > div {
+			display: none;
+		}
+
+		& > div.active {
+			display: block;
+		}
+
+		.heading {
+			font-size: 23px;
+			margin-bottom: 15px;
+			padding-bottom: 5px;
+			border-bottom: 1px solid #ccc;
+		}
+
+		.input-row {
+			margin-bottom: 10px;
+		}
+
+		.connection-type {
+			list-style: none;
+			padding-left: 10px;
+			vertical-align: middle;
+	
+			.connection-item {
+				cursor: pointer;
+				margin-bottom: 5px;
+
+				&.active {
+					color: #67c23a;
+				}
+	
+				.connection-icon {
+					vertical-align: middle;
+					height: 25px;
+					margin-right: 5px;
+					border-radius: 5px;
+				}
 			}
 		}
 	}
